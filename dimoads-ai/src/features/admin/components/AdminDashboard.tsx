@@ -20,7 +20,7 @@ const PaymentsCenter = React.lazy(() => import('../payments/PaymentsCenter'));
 const AnalyticsDashboard = React.lazy(() => import('../analytics/AnalyticsDashboard'));
 const SystemSettingsView = React.lazy(() => import('../settings/SystemSettingsView'));
 const RolesManagement = React.lazy(() => import('../roles/RolesManagement'));
-const AuditLogsView = React.lazy(() => import('../logs/AuditLogsView'));
+const AuditLogsView = React.lazy(() => import('../audit-logs/AuditLogsView'));
 const AiAdminAssistantView = React.lazy(() => import('../ai-assistant/AiAdminAssistantView'));
 
 import AdminSidebar from './AdminSidebar';
