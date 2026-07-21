@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "Mercado global impulsado por IA"
+  },
+  "common": {
+    "search": "Buscar",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar sesión",
+    "create": "Crear",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "categories": "Categorías",
+    "messages": "Mensajes",
+    "profile": "Perfil",
+    "settings": "Configuración"
+  },
+  "listing": {
+    "createTitle": "Crear anuncio",
+    "title": "Título",
+    "description": "Descripción",
+    "price": "Precio",
+    "location": "Ubicación",
+    "category": "Categoría"
+  },
+  "auth": {
+    "welcome": "Bienvenido a Dimoads AI",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "phone": "Número de teléfono"
+  },
+  "header": {
+    "tagline": "Clasificados globales con IA",
+    "admin": "Administrador",
+    "trust": "Confianza",
+    "publishAd": "Publicar anuncio",
+    "changeLanguage": "Cambiar idioma"
+  },
+  "toast": {
+    "aiSearchComplete": "¡Coincidencia de inteligencia semántica de IA completa!",
+    "aiSearchException": "Error en la búsqueda de IA: asegúrese de que el servidor proxy esté funcionando",
+    "listingPublished": "¡Anuncio \"{{title}}\" publicado con éxito!",
+    "profileUpdated": "¡Perfil actualizado y puntuación de confianza renovada!",
+    "reportSubmitted": "Informe enviado correctamente para revisión del administrador.",
+    "listingSuspended": "Anuncio suspendido y eliminado del feed de búsqueda.",
+    "reportDismissed": "Informe descartado. Anuncio clasificado aprobado.",
+    "contactLoginRequired": "Inicie sesión para contactar al vendedor.",
+    "adminLoginRequired": "Inicie sesión para acceder al panel de administración.",
+    "adminOnly": "Solo las cuentas de administrador pueden acceder a este panel.",
+    "publishLoginRequired": "Inicie sesión para publicar anuncios clasificados."
+  },
+  "hero": {
+    "badge": "MOTOR DE CLASIFICADOS CON IA",
+    "heading": "El mercado más inteligente para empleos, inmuebles, vehículos y comercio global.",
+    "subtext": "Formule búsquedas en lenguaje natural (como \"Porsche barato en Dubái\") o deje que Gemini convierta sus notas en anuncios profesionales en segundos."
+  },
+  "category": {
+    "all": "Todos los anuncios",
+    "vehicles": "Vehículos",
+    "realEstate": "Bienes raíces",
+    "jobs": "Empleos",
+    "electronics": "Electrónica",
+    "services": "Servicios",
+    "businesses": "Negocios",
+    "investments": "Inversiones",
+    "industrial": "Industrial",
+    "commodities": "Materias primas"
+  },
+  "search": {
+    "aiActiveTitle": "Búsqueda semántica de IA activa",
+    "aiActiveDesc": "Los anuncios se han ordenado y filtrado dinámicamente según la relevancia conceptual con su intención: \"{{query}}\". Lea los motivos de coincidencia en cada anuncio.",
+    "aiScoreLabel": "Puntuación de relevancia IA"
+  },
+  "noResults": {
+    "title": "Ningún anuncio coincide con su búsqueda",
+    "desc": "Intente ajustar los límites de precio, borrar categorías o escribir una consulta descriptiva en lenguaje natural con nuestra IA."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Marketplace. Creado para el comercio global de clasificados impulsado por IA.",
+    "architectureLink": "Ver arquitectura completa y esquemas de base de datos (ARCHITECTURE.md)"
+  }
+}

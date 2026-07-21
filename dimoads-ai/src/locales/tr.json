@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "Yapay zeka destekli küresel pazar yeri"
+  },
+  "common": {
+    "search": "Ara",
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "logout": "Çıkış Yap",
+    "create": "Oluştur",
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "navigation": {
+    "home": "Ana Sayfa",
+    "categories": "Kategoriler",
+    "messages": "Mesajlar",
+    "profile": "Profil",
+    "settings": "Ayarlar"
+  },
+  "listing": {
+    "createTitle": "İlan Oluştur",
+    "title": "Başlık",
+    "description": "Açıklama",
+    "price": "Fiyat",
+    "location": "Konum",
+    "category": "Kategori"
+  },
+  "auth": {
+    "welcome": "Dimoads AI'ye Hoş Geldiniz",
+    "email": "E-posta",
+    "password": "Şifre",
+    "phone": "Telefon Numarası"
+  },
+  "header": {
+    "tagline": "Küresel Yapay Zeka İlanları",
+    "admin": "Yönetici",
+    "trust": "Güven",
+    "publishAd": "İlan Yayınla",
+    "changeLanguage": "Dili Değiştir"
+  },
+  "toast": {
+    "aiSearchComplete": "Yapay zeka anlamsal eşleştirme tamamlandı!",
+    "aiSearchException": "Yapay zeka araması başarısız: Proxy sunucusunun çalıştığından emin olun",
+    "listingPublished": "\"{{title}}\" ilanı başarıyla yayınlandı!",
+    "profileUpdated": "Profil güncellendi ve Güven Puanı yenilendi!",
+    "reportSubmitted": "Rapor yönetici incelemesi için başarıyla gönderildi.",
+    "listingSuspended": "İlan askıya alındı ve arama akışından kaldırıldı.",
+    "reportDismissed": "Rapor reddedildi. İlan onaylandı.",
+    "contactLoginRequired": "Satıcıyla iletişime geçmek için lütfen giriş yapın.",
+    "adminLoginRequired": "Yönetici Paneline erişmek için lütfen giriş yapın.",
+    "adminOnly": "Bu panele yalnızca Yönetici hesapları erişebilir.",
+    "publishLoginRequired": "İlan yayınlamak için lütfen giriş yapın."
+  },
+  "hero": {
+    "badge": "YAPAY ZEKA DESTEKLİ İLAN MOTORU",
+    "heading": "İş, emlak, araç ve küresel ticaret için en akıllı pazar yeri.",
+    "subtext": "Aramalarınızı doğal dilde yazın (\"Dubai'de ucuz Porsche\" gibi) veya Gemini'nin notlarınızı saniyeler içinde profesyonel ilanlara dönüştürmesine izin verin."
+  },
+  "category": {
+    "all": "Tüm İlanlar",
+    "vehicles": "Araçlar",
+    "realEstate": "Emlak",
+    "jobs": "İş İlanları",
+    "electronics": "Elektronik",
+    "services": "Hizmetler",
+    "businesses": "İşletmeler",
+    "investments": "Yatırımlar",
+    "industrial": "Endüstriyel",
+    "commodities": "Emtialar"
+  },
+  "search": {
+    "aiActiveTitle": "Yapay Zeka Anlamsal Arama Aktif",
+    "aiActiveDesc": "İlanlar, niyetinizle olan kavramsal ilgisine göre dinamik olarak sıralandı ve filtrelendi: \"{{query}}\". Her ilan kartındaki eşleşme nedenlerini okuyun.",
+    "aiScoreLabel": "Yapay Zeka İlgi Puanı"
+  },
+  "noResults": {
+    "title": "Aramanızla eşleşen ilan yok",
+    "desc": "Fiyat sınırlarınızı ayarlamayı, kategorileri temizlemeyi veya yapay zekamızla doğal dilde açıklayıcı bir sorgu yazmayı deneyin."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Pazar Yeri. Yapay zeka destekli küresel ilan ticareti için tasarlandı.",
+    "architectureLink": "Tam Mimariyi ve Veritabanı Şemalarını Görüntüle (ARCHITECTURE.md)"
+  }
+}

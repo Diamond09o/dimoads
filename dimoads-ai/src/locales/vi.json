@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "Chợ toàn cầu được hỗ trợ bởi AI"
+  },
+  "common": {
+    "search": "Tìm kiếm",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "logout": "Đăng xuất",
+    "create": "Tạo",
+    "save": "Lưu",
+    "cancel": "Hủy"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "categories": "Danh mục",
+    "messages": "Tin nhắn",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt"
+  },
+  "listing": {
+    "createTitle": "Tạo tin đăng",
+    "title": "Tiêu đề",
+    "description": "Mô tả",
+    "price": "Giá",
+    "location": "Vị trí",
+    "category": "Danh mục"
+  },
+  "auth": {
+    "welcome": "Chào mừng đến với Dimoads AI",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "phone": "Số điện thoại"
+  },
+  "header": {
+    "tagline": "Rao vặt AI toàn cầu",
+    "admin": "Quản trị",
+    "trust": "Tin cậy",
+    "publishAd": "Đăng quảng cáo",
+    "changeLanguage": "Đổi ngôn ngữ"
+  },
+  "toast": {
+    "aiSearchComplete": "Đối sánh ngữ nghĩa AI hoàn tất!",
+    "aiSearchException": "Tìm kiếm AI thất bại: Đảm bảo máy chủ proxy đang chạy",
+    "listingPublished": "Tin đăng \"{{title}}\" đã được đăng thành công!",
+    "profileUpdated": "Đã cập nhật hồ sơ & làm mới Điểm tin cậy!",
+    "reportSubmitted": "Đã gửi báo cáo thành công để quản trị viên xem xét.",
+    "listingSuspended": "Tin đăng đã bị đình chỉ và xóa khỏi nguồn tìm kiếm.",
+    "reportDismissed": "Đã bỏ qua báo cáo. Tin đăng được chấp thuận.",
+    "contactLoginRequired": "Vui lòng đăng nhập để liên hệ với người bán.",
+    "adminLoginRequired": "Vui lòng đăng nhập để truy cập Bảng quản trị.",
+    "adminOnly": "Chỉ tài khoản Quản trị viên mới có thể truy cập bảng này.",
+    "publishLoginRequired": "Vui lòng đăng nhập để đăng quảng cáo."
+  },
+  "hero": {
+    "badge": "CÔNG CỤ RAO VẶT ĐƯỢC HỖ TRỢ BỞI AI",
+    "heading": "Chợ thông minh nhất cho việc làm, bất động sản, xe cộ và thương mại toàn cầu.",
+    "subtext": "Nhập truy vấn tìm kiếm bằng ngôn ngữ tự nhiên (như \"Porsche giá rẻ ở Dubai\") hoặc để Gemini biến ghi chú của bạn thành quảng cáo chuyên nghiệp trong vài giây."
+  },
+  "category": {
+    "all": "Tất cả tin đăng",
+    "vehicles": "Xe cộ",
+    "realEstate": "Bất động sản",
+    "jobs": "Việc làm",
+    "electronics": "Đồ điện tử",
+    "services": "Dịch vụ",
+    "businesses": "Doanh nghiệp",
+    "investments": "Đầu tư",
+    "industrial": "Công nghiệp",
+    "commodities": "Hàng hóa"
+  },
+  "search": {
+    "aiActiveTitle": "Tìm kiếm ngữ nghĩa AI đang hoạt động",
+    "aiActiveDesc": "Các tin đăng đã được sắp xếp và lọc động theo mức độ liên quan khái niệm với ý định của bạn: \"{{query}}\". Đọc lý do khớp trên từng thẻ quảng cáo.",
+    "aiScoreLabel": "Điểm liên quan AI"
+  },
+  "noResults": {
+    "title": "Không có quảng cáo nào khớp với tìm kiếm của bạn",
+    "desc": "Hãy thử điều chỉnh giới hạn giá, xóa danh mục hoặc nhập truy vấn mô tả bằng ngôn ngữ tự nhiên với AI của chúng tôi."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Marketplace. Được tạo ra cho thương mại rao vặt toàn cầu do AI thúc đẩy.",
+    "architectureLink": "Xem Kiến trúc Đầy đủ & Sơ đồ Cơ sở dữ liệu (ARCHITECTURE.md)"
+  }
+}

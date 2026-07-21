@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "AI-gedreven wereldwijde marktplaats"
+  },
+  "common": {
+    "search": "Zoeken",
+    "login": "Inloggen",
+    "register": "Registreren",
+    "logout": "Uitloggen",
+    "create": "Aanmaken",
+    "save": "Opslaan",
+    "cancel": "Annuleren"
+  },
+  "navigation": {
+    "home": "Home",
+    "categories": "Categorieën",
+    "messages": "Berichten",
+    "profile": "Profiel",
+    "settings": "Instellingen"
+  },
+  "listing": {
+    "createTitle": "Advertentie plaatsen",
+    "title": "Titel",
+    "description": "Beschrijving",
+    "price": "Prijs",
+    "location": "Locatie",
+    "category": "Categorie"
+  },
+  "auth": {
+    "welcome": "Welkom bij Dimoads AI",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "phone": "Telefoonnummer"
+  },
+  "header": {
+    "tagline": "Wereldwijde AI-advertenties",
+    "admin": "Beheerder",
+    "trust": "Vertrouwen",
+    "publishAd": "Advertentie plaatsen",
+    "changeLanguage": "Taal wijzigen"
+  },
+  "toast": {
+    "aiSearchComplete": "AI-semantische match voltooid!",
+    "aiSearchException": "AI-zoekopdracht mislukt: controleer of de proxyserver actief is",
+    "listingPublished": "Advertentie \"{{title}}\" succesvol geplaatst!",
+    "profileUpdated": "Profiel bijgewerkt en vertrouwensscore vernieuwd!",
+    "reportSubmitted": "Melding succesvol ingediend voor beoordeling door beheerder.",
+    "listingSuspended": "Advertentie opgeschort en verwijderd uit zoekresultaten.",
+    "reportDismissed": "Melding afgewezen. Advertentie goedgekeurd.",
+    "contactLoginRequired": "Log in om contact op te nemen met de verkoper.",
+    "adminLoginRequired": "Log in om toegang te krijgen tot het beheerderspaneel.",
+    "adminOnly": "Alleen beheerdersaccounts hebben toegang tot dit paneel.",
+    "publishLoginRequired": "Log in om advertenties te plaatsen."
+  },
+  "hero": {
+    "badge": "AI-GEDREVEN ADVERTENTIE-ENGINE",
+    "heading": "De slimste marktplaats voor banen, onroerend goed, voertuigen en wereldhandel.",
+    "subtext": "Formuleer zoekopdrachten in normale taal (zoals \"goedkope Porsche in Dubai\") of laat Gemini uw notities in seconden omzetten in professionele advertenties."
+  },
+  "category": {
+    "all": "Alle advertenties",
+    "vehicles": "Voertuigen",
+    "realEstate": "Onroerend goed",
+    "jobs": "Vacatures",
+    "electronics": "Elektronica",
+    "services": "Diensten",
+    "businesses": "Bedrijven",
+    "investments": "Investeringen",
+    "industrial": "Industrieel",
+    "commodities": "Grondstoffen"
+  },
+  "search": {
+    "aiActiveTitle": "AI-semantisch zoeken actief",
+    "aiActiveDesc": "Advertenties zijn dynamisch gesorteerd en gefilterd op conceptuele relevantie voor uw intentie: \"{{query}}\". Lees de matchredenen op elke advertentiekaart.",
+    "aiScoreLabel": "AI-relevantiescore"
+  },
+  "noResults": {
+    "title": "Geen advertenties komen overeen met uw zoekopdracht",
+    "desc": "Probeer uw prijsgrenzen aan te passen, categorieën te wissen, of typ een beschrijvende natuurlijke taalquery met onze AI."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Marketplace. Gemaakt voor AI-gedreven wereldwijde advertentiehandel.",
+    "architectureLink": "Bekijk volledige architectuur en databaseschema's (ARCHITECTURE.md)"
+  }
+}

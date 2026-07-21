@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "Pasar global bertenaga AI"
+  },
+  "common": {
+    "search": "Cari",
+    "login": "Masuk",
+    "register": "Daftar",
+    "logout": "Keluar",
+    "create": "Buat",
+    "save": "Simpan",
+    "cancel": "Batal"
+  },
+  "navigation": {
+    "home": "Beranda",
+    "categories": "Kategori",
+    "messages": "Pesan",
+    "profile": "Profil",
+    "settings": "Pengaturan"
+  },
+  "listing": {
+    "createTitle": "Buat Iklan",
+    "title": "Judul",
+    "description": "Deskripsi",
+    "price": "Harga",
+    "location": "Lokasi",
+    "category": "Kategori"
+  },
+  "auth": {
+    "welcome": "Selamat Datang di Dimoads AI",
+    "email": "Email",
+    "password": "Kata Sandi",
+    "phone": "Nomor Telepon"
+  },
+  "header": {
+    "tagline": "Iklan Baris AI Global",
+    "admin": "Admin",
+    "trust": "Kepercayaan",
+    "publishAd": "Terbitkan Iklan",
+    "changeLanguage": "Ubah Bahasa"
+  },
+  "toast": {
+    "aiSearchComplete": "Pencocokan semantik AI selesai!",
+    "aiSearchException": "Pencarian AI gagal: Pastikan server proxy berjalan",
+    "listingPublished": "Iklan \"{{title}}\" berhasil diterbitkan!",
+    "profileUpdated": "Profil diperbarui & Skor Kepercayaan disegarkan!",
+    "reportSubmitted": "Laporan berhasil dikirim untuk ditinjau admin.",
+    "listingSuspended": "Iklan ditangguhkan dan dihapus dari umpan pencarian.",
+    "reportDismissed": "Laporan ditolak. Iklan disetujui.",
+    "contactLoginRequired": "Silakan masuk untuk menghubungi penjual.",
+    "adminLoginRequired": "Silakan masuk untuk mengakses Panel Admin.",
+    "adminOnly": "Hanya akun Administrator yang dapat mengakses panel ini.",
+    "publishLoginRequired": "Silakan masuk untuk menerbitkan iklan baris."
+  },
+  "hero": {
+    "badge": "MESIN IKLAN BARIS BERTENAGA AI",
+    "heading": "Pasar Tercerdas untuk Pekerjaan, Properti, Kendaraan & Perdagangan Global.",
+    "subtext": "Buat kueri pencarian dalam bahasa biasa (seperti \"Porsche murah di Dubai\") atau biarkan Gemini mengubah catatan Anda menjadi iklan profesional dalam hitungan detik."
+  },
+  "category": {
+    "all": "Semua Iklan",
+    "vehicles": "Kendaraan",
+    "realEstate": "Properti",
+    "jobs": "Pekerjaan",
+    "electronics": "Elektronik",
+    "services": "Jasa",
+    "businesses": "Bisnis",
+    "investments": "Investasi",
+    "industrial": "Industri",
+    "commodities": "Komoditas"
+  },
+  "search": {
+    "aiActiveTitle": "Pencarian Semantik AI Aktif",
+    "aiActiveDesc": "Iklan telah diurutkan dan difilter secara dinamis berdasarkan relevansi konseptual dengan maksud Anda: \"{{query}}\". Baca alasan pencocokan pada setiap kartu iklan.",
+    "aiScoreLabel": "Skor Relevansi AI"
+  },
+  "noResults": {
+    "title": "Tidak Ada Iklan yang Cocok dengan Pencarian Anda",
+    "desc": "Coba sesuaikan batas harga, hapus kategori, atau ketik kueri bahasa alami yang deskriptif dengan AI kami."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Marketplace. Dibuat untuk perdagangan iklan baris global bertenaga AI.",
+    "architectureLink": "Lihat Arsitektur Lengkap & Skema Basis Data (ARCHITECTURE.md)"
+  }
+}

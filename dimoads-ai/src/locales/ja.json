@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "AI搭載のグローバルマーケットプレイス"
+  },
+  "common": {
+    "search": "検索",
+    "login": "ログイン",
+    "register": "登録",
+    "logout": "ログアウト",
+    "create": "作成",
+    "save": "保存",
+    "cancel": "キャンセル"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "categories": "カテゴリー",
+    "messages": "メッセージ",
+    "profile": "プロフィール",
+    "settings": "設定"
+  },
+  "listing": {
+    "createTitle": "出品を作成",
+    "title": "タイトル",
+    "description": "説明",
+    "price": "価格",
+    "location": "場所",
+    "category": "カテゴリー"
+  },
+  "auth": {
+    "welcome": "Dimoads AIへようこそ",
+    "email": "メール",
+    "password": "パスワード",
+    "phone": "電話番号"
+  },
+  "header": {
+    "tagline": "グローバルAIクラシファイド",
+    "admin": "管理者",
+    "trust": "信頼",
+    "publishAd": "広告を掲載",
+    "changeLanguage": "言語を変更"
+  },
+  "toast": {
+    "aiSearchComplete": "AIセマンティック検索が完了しました！",
+    "aiSearchException": "AI検索に失敗しました：プロキシサーバーが実行中か確認してください",
+    "listingPublished": "出品「{{title}}」が正常に公開されました！",
+    "profileUpdated": "プロフィールが更新され、信頼スコアが更新されました！",
+    "reportSubmitted": "通報が管理者レビュー用に正常に送信されました。",
+    "listingSuspended": "出品は停止され、検索フィードから削除されました。",
+    "reportDismissed": "通報は却下され、掲載は承認されました。",
+    "contactLoginRequired": "出品者に連絡するにはサインインしてください。",
+    "adminLoginRequired": "管理パネルにアクセスするにはサインインしてください。",
+    "adminOnly": "このパネルには管理者アカウントのみアクセスできます。",
+    "publishLoginRequired": "広告を掲載するにはサインインしてください。"
+  },
+  "hero": {
+    "badge": "AI搭載クラシファイドエンジン",
+    "heading": "求人、不動産、車両、グローバル取引のための最も賢いマーケットプレイス。",
+    "subtext": "「ドバイの安いポルシェ」のような自然な言葉で検索したり、Geminiにメモを数秒でプロ仕様の広告に変換させたりできます。"
+  },
+  "category": {
+    "all": "すべての出品",
+    "vehicles": "車両",
+    "realEstate": "不動産",
+    "jobs": "求人",
+    "electronics": "家電",
+    "services": "サービス",
+    "businesses": "事業譲渡",
+    "investments": "投資機会",
+    "industrial": "産業機器",
+    "commodities": "商品"
+  },
+  "search": {
+    "aiActiveTitle": "AIセマンティック検索が有効",
+    "aiActiveDesc": "「{{query}}」という意図との概念的な関連性に基づき、出品が動的に並べ替え・フィルタリングされました。各カードでマッチ理由をご確認ください。",
+    "aiScoreLabel": "AI関連度スコア"
+  },
+  "noResults": {
+    "title": "検索に一致する広告がありません",
+    "desc": "価格範囲を調整するか、カテゴリーをクリアするか、AIを使って自然な言葉で説明的な検索をしてみてください。"
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI マーケットプレイス。AI駆動のグローバルクラシファイド商取引のために作られました。",
+    "architectureLink": "完全なアーキテクチャとデータベーススキーマを見る（ARCHITECTURE.md）"
+  }
+}

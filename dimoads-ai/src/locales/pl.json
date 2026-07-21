@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "Globalny rynek napędzany sztuczną inteligencją"
+  },
+  "common": {
+    "search": "Szukaj",
+    "login": "Zaloguj się",
+    "register": "Zarejestruj się",
+    "logout": "Wyloguj się",
+    "create": "Utwórz",
+    "save": "Zapisz",
+    "cancel": "Anuluj"
+  },
+  "navigation": {
+    "home": "Strona główna",
+    "categories": "Kategorie",
+    "messages": "Wiadomości",
+    "profile": "Profil",
+    "settings": "Ustawienia"
+  },
+  "listing": {
+    "createTitle": "Utwórz ogłoszenie",
+    "title": "Tytuł",
+    "description": "Opis",
+    "price": "Cena",
+    "location": "Lokalizacja",
+    "category": "Kategoria"
+  },
+  "auth": {
+    "welcome": "Witamy w Dimoads AI",
+    "email": "E-mail",
+    "password": "Hasło",
+    "phone": "Numer telefonu"
+  },
+  "header": {
+    "tagline": "Globalne ogłoszenia AI",
+    "admin": "Administrator",
+    "trust": "Zaufanie",
+    "publishAd": "Opublikuj ogłoszenie",
+    "changeLanguage": "Zmień język"
+  },
+  "toast": {
+    "aiSearchComplete": "Dopasowanie semantyczne AI zakończone!",
+    "aiSearchException": "Wyszukiwanie AI nie powiodło się: upewnij się, że serwer proxy działa",
+    "listingPublished": "Ogłoszenie \"{{title}}\" zostało pomyślnie opublikowane!",
+    "profileUpdated": "Profil zaktualizowany, wskaźnik zaufania odświeżony!",
+    "reportSubmitted": "Zgłoszenie zostało pomyślnie przesłane do przeglądu administratora.",
+    "listingSuspended": "Ogłoszenie zawieszone i usunięte z wyników wyszukiwania.",
+    "reportDismissed": "Zgłoszenie odrzucone. Ogłoszenie zatwierdzone.",
+    "contactLoginRequired": "Zaloguj się, aby skontaktować się ze sprzedawcą.",
+    "adminLoginRequired": "Zaloguj się, aby uzyskać dostęp do panelu administratora.",
+    "adminOnly": "Tylko konta administratora mają dostęp do tego panelu.",
+    "publishLoginRequired": "Zaloguj się, aby opublikować ogłoszenie."
+  },
+  "hero": {
+    "badge": "SILNIK OGŁOSZEŃ NAPĘDZANY AI",
+    "heading": "Najinteligentniejszy rynek pracy, nieruchomości, pojazdów i handlu globalnego.",
+    "subtext": "Formułuj zapytania w naturalnym języku (np. \"tania Porsche w Dubaju\") lub pozwól Gemini w kilka sekund zamienić Twoje notatki w profesjonalne ogłoszenie."
+  },
+  "category": {
+    "all": "Wszystkie ogłoszenia",
+    "vehicles": "Pojazdy",
+    "realEstate": "Nieruchomości",
+    "jobs": "Praca",
+    "electronics": "Elektronika",
+    "services": "Usługi",
+    "businesses": "Firmy",
+    "investments": "Inwestycje",
+    "industrial": "Przemysłowe",
+    "commodities": "Towary"
+  },
+  "search": {
+    "aiActiveTitle": "Aktywne wyszukiwanie semantyczne AI",
+    "aiActiveDesc": "Ogłoszenia zostały dynamicznie posortowane i przefiltrowane według trafności koncepcyjnej względem Twojego zapytania: \"{{query}}\". Powody dopasowania znajdziesz na każdej karcie.",
+    "aiScoreLabel": "Wynik trafności AI"
+  },
+  "noResults": {
+    "title": "Brak ogłoszeń pasujących do wyszukiwania",
+    "desc": "Spróbuj dostosować zakres cenowy, wyczyścić kategorie lub wpisać opisowe zapytanie w naturalnym języku za pomocą naszej AI."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Marketplace. Stworzone z myślą o globalnym handlu ogłoszeniami napędzanym przez AI.",
+    "architectureLink": "Zobacz pełną architekturę i schematy bazy danych (ARCHITECTURE.md)"
+  }
+}

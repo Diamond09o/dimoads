@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "AI powered global marketplace"
+  },
+  "common": {
+    "search": "Search",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "create": "Create",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "navigation": {
+    "home": "Home",
+    "categories": "Categories",
+    "messages": "Messages",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "listing": {
+    "createTitle": "Create Listing",
+    "title": "Title",
+    "description": "Description",
+    "price": "Price",
+    "location": "Location",
+    "category": "Category"
+  },
+  "auth": {
+    "welcome": "Welcome to Dimoads AI",
+    "email": "Email",
+    "password": "Password",
+    "phone": "Phone Number"
+  },
+  "header": {
+    "tagline": "Global AI Classifieds",
+    "admin": "Admin",
+    "trust": "Trust",
+    "publishAd": "Publish Ad",
+    "changeLanguage": "Change Language"
+  },
+  "toast": {
+    "aiSearchComplete": "AI semantic intelligence match complete!",
+    "aiSearchException": "AI Search failed: Ensure the proxy server is running",
+    "listingPublished": "Listing \"{{title}}\" published successfully!",
+    "profileUpdated": "Profile updated & Trust Score refreshed!",
+    "reportSubmitted": "Report submitted successfully for admin review.",
+    "listingSuspended": "Listing suspended and removed from search feed.",
+    "reportDismissed": "Report dismissed. Classified listing approved.",
+    "contactLoginRequired": "Please sign in to contact the seller.",
+    "adminLoginRequired": "Please sign in to access the Admin Panel.",
+    "adminOnly": "Only Administrator accounts can access this panel.",
+    "publishLoginRequired": "Please sign in to publish classified ads."
+  },
+  "hero": {
+    "badge": "AI-POWERED CLASSIFIEDS ENGINE",
+    "heading": "The Smartest Marketplace for Jobs, Real Estate, Vehicles & Global Commerce.",
+    "subtext": "Formulate search queries in normal language (like \"cheap Porsche in Dubai\") or let Gemini expand your notes into professional advertisements in seconds."
+  },
+  "category": {
+    "all": "All Listings",
+    "vehicles": "Vehicles",
+    "realEstate": "Real Estate",
+    "jobs": "Jobs",
+    "electronics": "Electronics",
+    "services": "Services",
+    "businesses": "Businesses",
+    "investments": "Investments",
+    "industrial": "Industrial",
+    "commodities": "Commodities"
+  },
+  "search": {
+    "aiActiveTitle": "AI Semantic Search Active",
+    "aiActiveDesc": "Classified listings have been dynamically sorted and filtered according to conceptual relevance matching your intent: \"{{query}}\". Read individual matching reasons on each ad card.",
+    "aiScoreLabel": "AI Relevance Score"
+  },
+  "noResults": {
+    "title": "No Ads Match Your Search",
+    "desc": "Try adjusting your price bounds, clearing categories, or type a descriptive natural language query with our AI."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Marketplace. Crafted for AI-driven global classified commerce.",
+    "architectureLink": "View Complete Architecture & Database Schemas (ARCHITECTURE.md)"
+  }
+}

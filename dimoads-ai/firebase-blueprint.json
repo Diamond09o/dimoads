@@ -1,0 +1,120 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile containing trust score, account type, and verification status.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "The unique user identifier matching request.auth.uid" },
+        "name": { "type": "string", "description": "Display name of the user" },
+        "email": { "type": "string", "format": "email", "description": "Verified email address" },
+        "phone": { "type": "string", "description": "Verified phone number" },
+        "accountType": { "type": "string", "enum": ["personal", "business"], "description": "Type of user account" },
+        "verificationStatus": { "type": "string", "enum": ["unverified", "pending", "verified"], "description": "KYC verification status" },
+        "trustScore": { "type": "integer", "description": "Calculated reliability score between 0 and 100" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp of profile creation" }
+      },
+      "required": ["id", "name", "accountType", "verificationStatus", "trustScore", "createdAt"]
+    },
+    "Listing": {
+      "title": "Classified Advertisement Listing",
+      "description": "A single classified ad published on the platform.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique auto-generated listing ID" },
+        "title": { "type": "string", "description": "Headline of the listing" },
+        "description": { "type": "string", "description": "Detailed description of the listing" },
+        "category": { "type": "string", "enum": ["jobs", "real-estate", "vehicles", "electronics", "services", "businesses-for-sale", "investment-opportunities", "industrial-equipment", "commodities"], "description": "Main category classification" },
+        "location": { "type": "string", "description": "Geographical location (Country / City / Region)" },
+        "price": { "type": "number", "description": "Asking price in USD" },
+        "images": { "type": "array", "description": "Array of secure URLs of uploaded images" },
+        "video": { "type": "string", "description": "Optional video attachment URL" },
+        "contactOptions": {
+          "type": "object",
+          "description": "Contact methods allowed by the seller",
+          "properties": {
+            "phone": { "type": "string" },
+            "email": { "type": "string" },
+            "whatsapp": { "type": "string" }
+          }
+        },
+        "expiryDate": { "type": "string", "format": "date-time", "description": "Automatic advertisement expiration date" },
+        "viewsCount": { "type": "integer", "description": "Number of times this listing was viewed" },
+        "ownerId": { "type": "string", "description": "UID of the user who published this listing" },
+        "isPremium": { "type": "boolean", "description": "Whether this is a featured paid listing" },
+        "status": { "type": "string", "enum": ["pending", "active", "suspended", "sold"], "description": "Listing validation status" },
+        "aiTags": { "type": "array", "description": "AI generated SEO keywords" },
+        "originalLanguage": { "type": "string", "enum": ["en", "ar"], "description": "Original posting language" },
+        "translations": {
+          "type": "object",
+          "description": "Translations for title and description",
+          "properties": {
+            "ar": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "description": { "type": "string" }
+              }
+            },
+            "en": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "description": { "type": "string" }
+              }
+            }
+          }
+        },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp of creation" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Timestamp of last modification" }
+      },
+      "required": ["id", "title", "description", "category", "location", "price", "ownerId", "status", "createdAt", "updatedAt"]
+    },
+    "Message": {
+      "title": "Chat Message",
+      "description": "A single text message exchanged between buyer and seller.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique message ID" },
+        "chatId": { "type": "string", "description": "Thread identifier combining participant UIDs" },
+        "senderId": { "type": "string", "description": "UID of the message author" },
+        "receiverId": { "type": "string", "description": "UID of the recipient" },
+        "text": { "type": "string", "description": "Plaintext message content" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp of dispatch" }
+      },
+      "required": ["id", "chatId", "senderId", "receiverId", "text", "createdAt"]
+    },
+    "Report": {
+      "title": "Listing Moderation Report",
+      "description": "User feedback reporting a suspicious or inappropriate listing.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique report ID" },
+        "listingId": { "type": "string", "description": "ID of the listing being flagged" },
+        "reporterId": { "type": "string", "description": "UID of the user submitting the report" },
+        "reason": { "type": "string", "description": "Category or text explanation of the flag" },
+        "status": { "type": "string", "enum": ["pending", "resolved", "dismissed"], "description": "Moderation workflow state" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp of report" }
+      },
+      "required": ["id", "listingId", "reporterId", "reason", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Collection of user metadata, accounts, and trust indexes."
+    },
+    "listings/{listingId}": {
+      "schema": "Listing",
+      "description": "Global marketplace advertisement documents."
+    },
+    "chats/{chatId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Sub-collection containing direct communication history between user pairs."
+    },
+    "reports/{reportId}": {
+      "schema": "Report",
+      "description": "Moderation tickets for community-driven trust policing."
+    }
+  }
+}

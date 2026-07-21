@@ -1,0 +1,292 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ====================================================
+    // GLOBAL Safety Net: Default-Deny Catch-All
+    // ====================================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // ====================================================
+    // GLOBAL HELPERS & IDENTITY VERIFICATION
+    // ====================================================
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.accountType == 'administrator')
+      );
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // ====================================================
+    // ENTITY VALIDATORS
+    // ====================================================
+    function isValidUser(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() <= 256 &&
+             data.email is string && data.email.size() <= 256 &&
+             (data.trustScore == null || data.trustScore is number);
+    }
+
+    function isValidListing(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.title is string && data.title.size() <= 200 &&
+             data.description is string && data.description.size() <= 20000 &&
+             data.price is number &&
+             data.status is string && data.status.size() <= 32;
+    }
+
+    function isValidReport(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.listingId is string && data.listingId.size() <= 128 &&
+             data.reporterId is string && data.reporterId.size() <= 128 &&
+             data.reason is string && data.reason.size() <= 5000 &&
+             data.status is string && data.status.size() <= 32;
+    }
+
+    // ====================================================
+    // 1. USERS COLLECTION
+    // ====================================================
+    match /users/{userId} {
+      allow read: if true;
+      allow create: if isSignedIn() && userId == request.auth.uid && isValidUser(incoming()) && 
+                    (!incoming().keys().hasAll(['accountType']) || incoming().accountType != 'administrator');
+      allow update: if (isOwner(userId) && isValidUser(incoming()) && 
+                    (!incoming().diff(existing()).affectedKeys().hasAny(['accountType', 'trustScore']))) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // ====================================================
+    // 2. LISTINGS COLLECTION
+    // ====================================================
+    match /listings/{listingId} {
+      allow read: if true;
+      allow create: if isSignedIn() && isValidId(listingId) && isValidListing(incoming()) && 
+                    (incoming().sellerId == request.auth.uid);
+      allow update: if (isSignedIn() && isValidListing(incoming()) && (
+                      isAdmin() ||
+                      (existing().sellerId == request.auth.uid && incoming().sellerId == request.auth.uid &&
+                       !incoming().diff(existing()).affectedKeys().hasAny(['sellerId', 'isPremium'])) ||
+                      (incoming().diff(existing()).affectedKeys().hasOnly(['views']))
+                    ));
+      allow delete: if isAdmin() || (isSignedIn() && existing().sellerId == request.auth.uid);
+    }
+
+    // ==========================================
+    // 3. CATEGORIES COLLECTION
+    // ==========================================
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ==========================================
+    // 4. COUNTRIES COLLECTION
+    // ==========================================
+    match /countries/{countryCode} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ==========================================
+    // 5. CITIES COLLECTION
+    // ==========================================
+    match /cities/{cityId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ==========================================
+    // 6. FAVORITES COLLECTION
+    // ==========================================
+    match /favorites/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId) || isAdmin();
+    }
+
+    // ==========================================
+    // 7. MESSAGES COLLECTION
+    // ==========================================
+    match /messages/{messageId} {
+      allow read: if isSignedIn() && (
+        existing().senderId == request.auth.uid || 
+        existing().receiverId == request.auth.uid ||
+        isAdmin()
+      );
+      allow create: if isSignedIn() && isValidId(messageId) && (incoming().senderId == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 8. CONVERSATIONS COLLECTION
+    // ==========================================
+    match /conversations/{conversationId} {
+      allow read: if isSignedIn() && (
+        request.auth.uid in existing().participantIds ||
+        isAdmin()
+      );
+      allow create: if isSignedIn() && isValidId(conversationId) && (request.auth.uid in incoming().participantIds);
+      allow update: if isSignedIn() && (
+        request.auth.uid in existing().participantIds ||
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 9. NOTIFICATIONS COLLECTION
+    // ==========================================
+    match /notifications/{notificationId} {
+      allow read: if isSignedIn() && (
+        existing().userId == request.auth.uid ||
+        isAdmin()
+      );
+      allow write: if isAdmin() || (isSignedIn() && incoming().userId == request.auth.uid);
+    }
+
+    // ==========================================
+    // 10. REPORTS COLLECTION
+    // ==========================================
+    match /reports/{reportId} {
+      allow read: if isAdmin();
+      allow create: if isSignedIn() && isValidId(reportId) && isValidReport(incoming()) && (incoming().reporterId == request.auth.uid);
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 11. REVIEWS COLLECTION
+    // ==========================================
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if isSignedIn() && isValidId(reviewId) && (incoming().reviewerId == request.auth.uid);
+      allow update: if isAdmin() || (isSignedIn() && existing().reviewerId == request.auth.uid);
+      allow delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 12. PAYMENTS COLLECTION
+    // ==========================================
+    match /payments/{paymentId} {
+      allow read: if isSignedIn() && (existing().userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && isValidId(paymentId) && (incoming().userId == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 13. SUBSCRIPTIONS COLLECTION
+    // ==========================================
+    match /subscriptions/{subscriptionId} {
+      allow read: if isSignedIn() && (existing().userId == request.auth.uid || isAdmin());
+      allow write: if isAdmin();
+    }
+
+    // ==========================================
+    // 14. ADVERTISEMENTS COLLECTION
+    // ==========================================
+    match /advertisements/{adId} {
+      allow read: if true;
+      allow write: if isAdmin() || (isSignedIn() && incoming().advertiserId == request.auth.uid);
+    }
+
+    // ==========================================
+    // 15. SAVED_SEARCHES COLLECTION
+    // ==========================================
+    match /saved_searches/{searchId} {
+      allow read, write: if isSignedIn() && (
+        (resource != null && existing().userId == request.auth.uid) || 
+        (request.resource != null && incoming().userId == request.auth.uid) || 
+        isAdmin()
+      );
+    }
+
+    // ==========================================
+    // 16. RECENT_SEARCHES COLLECTION
+    // ==========================================
+    match /recent_searches/{searchId} {
+      allow read, write: if isSignedIn() && (
+        (resource != null && existing().userId == request.auth.uid) || 
+        (request.resource != null && incoming().userId == request.auth.uid) || 
+        isAdmin()
+      );
+    }
+
+    // ==========================================
+    // 17. USER_ACTIVITY COLLECTION
+    // ==========================================
+    match /user_activity/{activityId} {
+      allow read: if isAdmin();
+      allow create: if isSignedIn() && isValidId(activityId) && (incoming().userId == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 18. ANALYTICS COLLECTION
+    // ==========================================
+    match /analytics/{metricId} {
+      allow read: if isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // ==========================================
+    // 19. SETTINGS COLLECTION
+    // ==========================================
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ==========================================
+    // 20. SUPPORT_TICKETS COLLECTION
+    // ==========================================
+    match /support_tickets/{ticketId} {
+      allow read: if isSignedIn() && (existing().userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && isValidId(ticketId) && (incoming().userId == request.auth.uid);
+      allow update: if isSignedIn() && (
+        (existing().userId == request.auth.uid && incoming().userId == request.auth.uid) || 
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 21. VERIFICATION_REQUESTS COLLECTION
+    // ==========================================
+    match /verification_requests/{requestId} {
+      allow read: if isSignedIn() && (existing().userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && isValidId(requestId) && (incoming().userId == request.auth.uid);
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // ==========================================
+    // ADMIN ACCESS CONTROL LIST
+    // ==========================================
+    match /admins/{adminId} {
+      allow read: if isSignedIn() && request.auth.uid == adminId;
+      allow write: if false;
+    }
+  }
+}

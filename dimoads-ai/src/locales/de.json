@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "KI-gestützter globaler Marktplatz"
+  },
+  "common": {
+    "search": "Suche",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "create": "Erstellen",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "categories": "Kategorien",
+    "messages": "Nachrichten",
+    "profile": "Profil",
+    "settings": "Einstellungen"
+  },
+  "listing": {
+    "createTitle": "Anzeige erstellen",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "price": "Preis",
+    "location": "Standort",
+    "category": "Kategorie"
+  },
+  "auth": {
+    "welcome": "Willkommen bei Dimoads AI",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "phone": "Telefonnummer"
+  },
+  "header": {
+    "tagline": "Globale KI-Kleinanzeigen",
+    "admin": "Admin",
+    "trust": "Vertrauen",
+    "publishAd": "Anzeige veröffentlichen",
+    "changeLanguage": "Sprache ändern"
+  },
+  "toast": {
+    "aiSearchComplete": "KI-semantischer Abgleich abgeschlossen!",
+    "aiSearchException": "KI-Suche fehlgeschlagen: Stellen Sie sicher, dass der Proxy-Server läuft",
+    "listingPublished": "Anzeige \"{{title}}\" erfolgreich veröffentlicht!",
+    "profileUpdated": "Profil aktualisiert & Vertrauenswert erneuert!",
+    "reportSubmitted": "Meldung erfolgreich zur Prüfung durch den Administrator eingereicht.",
+    "listingSuspended": "Anzeige gesperrt und aus dem Suchfeed entfernt.",
+    "reportDismissed": "Meldung abgelehnt. Anzeige genehmigt.",
+    "contactLoginRequired": "Bitte melden Sie sich an, um den Verkäufer zu kontaktieren.",
+    "adminLoginRequired": "Bitte melden Sie sich an, um auf das Admin-Panel zuzugreifen.",
+    "adminOnly": "Nur Administratorkonten haben Zugriff auf dieses Panel.",
+    "publishLoginRequired": "Bitte melden Sie sich an, um Kleinanzeigen zu veröffentlichen."
+  },
+  "hero": {
+    "badge": "KI-GESTÜTZTE KLEINANZEIGEN-ENGINE",
+    "heading": "Der intelligenteste Marktplatz für Jobs, Immobilien, Fahrzeuge und globalen Handel.",
+    "subtext": "Formulieren Sie Suchanfragen in normaler Sprache (z. B. \"günstiger Porsche in Dubai\") oder lassen Sie Gemini Ihre Notizen in Sekunden zu professionellen Anzeigen ausbauen."
+  },
+  "category": {
+    "all": "Alle Anzeigen",
+    "vehicles": "Fahrzeuge",
+    "realEstate": "Immobilien",
+    "jobs": "Jobs",
+    "electronics": "Elektronik",
+    "services": "Dienstleistungen",
+    "businesses": "Unternehmen",
+    "investments": "Investitionen",
+    "industrial": "Industrie",
+    "commodities": "Rohstoffe"
+  },
+  "search": {
+    "aiActiveTitle": "KI-semantische Suche aktiv",
+    "aiActiveDesc": "Anzeigen wurden dynamisch nach konzeptioneller Relevanz zu Ihrer Absicht sortiert und gefiltert: \"{{query}}\". Lesen Sie die Übereinstimmungsgründe auf jeder Anzeigenkarte.",
+    "aiScoreLabel": "KI-Relevanzwert"
+  },
+  "noResults": {
+    "title": "Keine Anzeigen entsprechen Ihrer Suche",
+    "desc": "Passen Sie Ihre Preisgrenzen an, löschen Sie Kategorien oder geben Sie eine beschreibende Suchanfrage in natürlicher Sprache mit unserer KI ein."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI Marketplace. Entwickelt für den KI-gestützten globalen Kleinanzeigenhandel.",
+    "architectureLink": "Vollständige Architektur & Datenbankschemas ansehen (ARCHITECTURE.md)"
+  }
+}

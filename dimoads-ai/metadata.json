@@ -1,0 +1,6 @@
+{
+  "name": "Dimoads AI",
+  "description": "Global AI-powered classifieds marketplace for jobs, real estate, vehicles, investment opportunities, and commodities, featuring real-time AI translation, fraud detection, and semantic search.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

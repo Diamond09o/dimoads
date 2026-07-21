@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "AI 기반 글로벌 마켓플레이스"
+  },
+  "common": {
+    "search": "검색",
+    "login": "로그인",
+    "register": "회원가입",
+    "logout": "로그아웃",
+    "create": "만들기",
+    "save": "저장",
+    "cancel": "취소"
+  },
+  "navigation": {
+    "home": "홈",
+    "categories": "카테고리",
+    "messages": "메시지",
+    "profile": "프로필",
+    "settings": "설정"
+  },
+  "listing": {
+    "createTitle": "매물 등록",
+    "title": "제목",
+    "description": "설명",
+    "price": "가격",
+    "location": "위치",
+    "category": "카테고리"
+  },
+  "auth": {
+    "welcome": "Dimoads AI에 오신 것을 환영합니다",
+    "email": "이메일",
+    "password": "비밀번호",
+    "phone": "전화번호"
+  },
+  "header": {
+    "tagline": "글로벌 AI 광고",
+    "admin": "관리자",
+    "trust": "신뢰도",
+    "publishAd": "광고 게시",
+    "changeLanguage": "언어 변경"
+  },
+  "toast": {
+    "aiSearchComplete": "AI 시맨틱 검색이 완료되었습니다!",
+    "aiSearchException": "AI 검색 실패: 프록시 서버가 실행 중인지 확인하세요",
+    "listingPublished": "매물 \"{{title}}\"이(가) 게시되었습니다!",
+    "profileUpdated": "프로필이 업데이트되고 신뢰도가 갱신되었습니다!",
+    "reportSubmitted": "신고가 관리자 검토를 위해 성공적으로 제출되었습니다.",
+    "listingSuspended": "매물이 정지되어 검색 피드에서 제거되었습니다.",
+    "reportDismissed": "신고가 기각되었습니다. 매물이 승인되었습니다.",
+    "contactLoginRequired": "판매자에게 연락하려면 로그인하세요.",
+    "adminLoginRequired": "관리자 패널에 접근하려면 로그인하세요.",
+    "adminOnly": "관리자 계정만 이 패널에 접근할 수 있습니다.",
+    "publishLoginRequired": "광고를 게시하려면 로그인하세요."
+  },
+  "hero": {
+    "badge": "AI 기반 광고 엔진",
+    "heading": "채용, 부동산, 차량 및 글로벌 상거래를 위한 가장 스마트한 마켓플레이스.",
+    "subtext": "\"두바이의 저렴한 포르쉐\"처럼 자연어로 검색하거나, Gemini가 몇 초 만에 메모를 전문 광고로 확장하도록 하세요."
+  },
+  "category": {
+    "all": "전체 매물",
+    "vehicles": "차량",
+    "realEstate": "부동산",
+    "jobs": "채용",
+    "electronics": "전자제품",
+    "services": "서비스",
+    "businesses": "사업체",
+    "investments": "투자",
+    "industrial": "산업 장비",
+    "commodities": "원자재"
+  },
+  "search": {
+    "aiActiveTitle": "AI 시맨틱 검색 활성화됨",
+    "aiActiveDesc": "\"{{query}}\"라는 의도와의 개념적 관련성에 따라 매물이 동적으로 정렬 및 필터링되었습니다. 각 카드에서 일치 이유를 확인하세요.",
+    "aiScoreLabel": "AI 관련도 점수"
+  },
+  "noResults": {
+    "title": "검색과 일치하는 광고가 없습니다",
+    "desc": "가격 범위를 조정하거나 카테고리를 지우거나, AI를 사용해 자연어로 설명적인 검색어를 입력해 보세요."
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI 마켓플레이스. AI 기반 글로벌 광고 상거래를 위해 제작되었습니다.",
+    "architectureLink": "전체 아키텍처 및 데이터베이스 스키마 보기 (ARCHITECTURE.md)"
+  }
+}

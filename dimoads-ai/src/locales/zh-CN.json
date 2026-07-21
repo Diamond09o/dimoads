@@ -1,0 +1,86 @@
+{
+  "app": {
+    "name": "Dimoads AI",
+    "description": "人工智能驱动的全球市场"
+  },
+  "common": {
+    "search": "搜索",
+    "login": "登录",
+    "register": "注册",
+    "logout": "登出",
+    "create": "创建",
+    "save": "保存",
+    "cancel": "取消"
+  },
+  "navigation": {
+    "home": "首页",
+    "categories": "分类",
+    "messages": "消息",
+    "profile": "个人资料",
+    "settings": "设置"
+  },
+  "listing": {
+    "createTitle": "发布信息",
+    "title": "标题",
+    "description": "描述",
+    "price": "价格",
+    "location": "位置",
+    "category": "类别"
+  },
+  "auth": {
+    "welcome": "欢迎使用 Dimoads AI",
+    "email": "电子邮件",
+    "password": "密码",
+    "phone": "电话号码"
+  },
+  "header": {
+    "tagline": "全球AI分类广告",
+    "admin": "管理员",
+    "trust": "信任",
+    "publishAd": "发布广告",
+    "changeLanguage": "更改语言"
+  },
+  "toast": {
+    "aiSearchComplete": "AI语义智能匹配完成！",
+    "aiSearchException": "AI搜索失败：请确保代理服务器正在运行",
+    "listingPublished": "信息“{{title}}”发布成功！",
+    "profileUpdated": "个人资料已更新，信任评分已刷新！",
+    "reportSubmitted": "举报已成功提交，等待管理员审核。",
+    "listingSuspended": "该信息已被暂停并从搜索列表中移除。",
+    "reportDismissed": "举报已驳回，该分类信息已获批准。",
+    "contactLoginRequired": "请登录以联系卖家。",
+    "adminLoginRequired": "请登录以访问管理面板。",
+    "adminOnly": "只有管理员账户才能访问此面板。",
+    "publishLoginRequired": "请登录以发布分类广告。"
+  },
+  "hero": {
+    "badge": "人工智能分类广告引擎",
+    "heading": "最智能的求职、房产、车辆及全球贸易市场。",
+    "subtext": "用自然语言搜索（例如“迪拜便宜的保时捷”），或让Gemini在几秒钟内将您的笔记扩展为专业广告。"
+  },
+  "category": {
+    "all": "全部信息",
+    "vehicles": "车辆",
+    "realEstate": "房地产",
+    "jobs": "招聘",
+    "electronics": "电子产品",
+    "services": "服务",
+    "businesses": "企业转让",
+    "investments": "投资机会",
+    "industrial": "工业设备",
+    "commodities": "大宗商品"
+  },
+  "search": {
+    "aiActiveTitle": "AI语义搜索已启用",
+    "aiActiveDesc": "已根据与您的意图“{{query}}”的概念相关性对信息进行了动态排序和筛选。请在每张广告卡片上查看具体匹配原因。",
+    "aiScoreLabel": "AI相关性评分"
+  },
+  "noResults": {
+    "title": "没有符合您搜索条件的广告",
+    "desc": "请尝试调整价格范围、清除分类，或使用我们的AI输入自然语言描述进行搜索。"
+  },
+  "footer": {
+    "copyright": "© 2026 Dimoads AI 市场。为人工智能驱动的全球分类商务打造。",
+    "architectureLink": "查看完整架构和数据库模式（ARCHITECTURE.md）"
+  }
+}
