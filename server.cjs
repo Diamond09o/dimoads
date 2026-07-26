@@ -285,6 +285,23 @@ var initialReports = [
 // server.ts
 import_dotenv.default.config();
 var app = (0, import_express.default)();
+var cspHeader = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https: blob:",
+  "font-src 'self' https: data:",
+  "connect-src 'self' ws: https: wss:",
+  "worker-src 'self' blob:",
+  "form-action 'self'",
+  "upgrade-insecure-requests"
+].join("; ");
+app.use((_req, res, next) => {
+  res.setHeader("Content-Security-Policy", cspHeader);
+  next();
+});
 var apiLimiter = (0, import_express_rate_limit.default)({
   windowMs: 15 * 60 * 1e3,
   // 15 minutes
@@ -1302,6 +1319,7 @@ async function startServer() {
     const vite = await (0, import_vite.createServer)({
       server: {
         middlewareMode: true,
+        hmr: false,
         watch: {
           ignored: ["**/data/**", "**/dist/**", "**/node_modules/**"]
         }
