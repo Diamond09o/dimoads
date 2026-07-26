@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: 'npm'
       - run: npm ci --prefix dimoads-ai
       - run: npm run build --prefix dimoads-ai
       - uses: peaceiris/actions-gh-pages@v4
