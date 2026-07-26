@@ -20,6 +20,8 @@ jobs:
           cache: 'npm'
       - run: npm ci --prefix dimoads-ai
       - run: npm run build --prefix dimoads-ai
+      - name: Copy index.html to 404.html for SPA routing
+        run: cp ./dimoads-ai/dist/index.html ./dimoads-ai/dist/404.html
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
