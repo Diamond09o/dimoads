@@ -42,30 +42,30 @@ requiredEnvVars.forEach((v) => {
   }
 });
 
-if (missingVars.length > 0) {
-  const errorMsg = `Missing required Firebase environment variables: ${missingVars.join(', ')}. Please configure them in your .env file or environment settings.`;
-  console.error(errorMsg);
-  throw new Error(errorMsg);
+const hasFirebaseConfig = missingVars.length === 0;
+
+if (!hasFirebaseConfig) {
+  console.warn(`Firebase config is incomplete; continuing in local/demo mode. Missing: ${missingVars.join(', ')}`);
 }
 
-const firebaseConfig = {
+const firebaseConfig = hasFirebaseConfig ? {
   projectId: metaEnv.VITE_FIREBASE_PROJECT_ID,
   appId: metaEnv.VITE_FIREBASE_APP_ID,
   apiKey: metaEnv.VITE_FIREBASE_API_KEY,
   authDomain: metaEnv.VITE_FIREBASE_AUTH_DOMAIN,
   storageBucket: metaEnv.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: metaEnv.VITE_FIREBASE_MESSAGING_SENDER_ID
-};
+} : undefined;
 
-const databaseId = metaEnv.VITE_FIREBASE_DATABASE_ID;
+const databaseId = metaEnv.VITE_FIREBASE_DATABASE_ID || 'default';
 
-// Initialize Firebase App
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+// Initialize Firebase App only when configuration is present.
+const app = hasFirebaseConfig && getApps().length === 0 ? initializeApp(firebaseConfig as any) : getApps()[0] || undefined;
 
-// Initialize Services
-export const auth = getAuth(app);
-export const db = getFirestore(app, databaseId);
-export const storage = getStorage(app);
+// Initialize Services only when we have a usable app.
+export const auth = app ? getAuth(app) : undefined as any;
+export const db = app ? getFirestore(app, databaseId) : undefined as any;
+export const storage = app ? getStorage(app) : undefined as any;
 
 // ----------------------------------------------------
 // DATABASE ACCESSORS & LOCAL STATE BRIDGES
