@@ -8,6 +8,7 @@ import { AppStateProvider } from "./app/context/AppStateContext";
 import { SearchFilterProvider } from "./features/search/context/SearchFilterContext";
 import { AuthProvider } from "./features/auth/AuthProvider";
 import { LanguageProvider } from "./providers/LanguageProvider";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 
 ReactDOM.createRoot(
@@ -24,7 +25,11 @@ ReactDOM.createRoot(
 
           <LanguageProvider>
 
-            <App />
+            <ThemeProvider>
+
+              <App />
+
+            </ThemeProvider>
 
           </LanguageProvider>
 
