@@ -1,1 +1,0 @@
-import{j as s}from"./index-CK0jXp0R.js";function e(){return s.jsxs("div",{className:"p-6 rounded-lg bg-white shadow-sm",children:[s.jsx("h2",{className:"text-2xl font-semibold mb-4",children:"Audit Logs"}),s.jsx("p",{className:"text-sm text-slate-600",children:"Audit log panel is not available in this build."})]})}export{e as default};
