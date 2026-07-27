@@ -87,7 +87,6 @@ export const COUNTRY_OPTIONS: CountryOption[] = [
   { code: 'IR', flag: '🇮🇷', labelEn: 'Iran', labelAr: 'إيران' },
   { code: 'IQ', flag: '🇮🇶', labelEn: 'Iraq', labelAr: 'العراق' },
   { code: 'IE', flag: '🇮🇪', labelEn: 'Ireland', labelAr: 'أيرلندا' },
-  { code: 'IL', flag: '🇮🇱', labelEn: 'Israel', labelAr: 'إسرائيل' },
   { code: 'IT', flag: '🇮🇹', labelEn: 'Italy', labelAr: 'إيطاليا' },
   { code: 'JM', flag: '🇯🇲', labelEn: 'Jamaica', labelAr: 'جامايكا' },
   { code: 'JP', flag: '🇯🇵', labelEn: 'Japan', labelAr: 'اليابان' },

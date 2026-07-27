@@ -9,10 +9,13 @@ import {
   User, 
   Sparkles, 
   CheckCircle, 
-  Info
+  Info,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { Listing, User as UserType, Report, Category } from '../types';
 import { useLanguage } from '../providers/LanguageProvider';
+import { useTheme } from '../providers/ThemeProvider';
 import { 
   getLocalListings, 
   saveLocalListings, 
@@ -82,6 +85,7 @@ export default function App() {
   // Global App States
   const { user: authUser, setAuthModalOpen, setAuthModalView } = useAuth();
   const { language, setLanguage, t, direction, availableLanguages } = useLanguage();
+  const { theme, setTheme, isDark } = useTheme();
   
   // UI Panels / Modal Triggers
   const [showAddModal, setShowAddModal] = useState(false);
@@ -298,128 +302,136 @@ export default function App() {
   };
 
   return (
-    <div 
-      id="app_root" 
-      dir={direction} 
-      className={`min-h-screen bg-gray-50 text-gray-800 pb-16 antialiased`}
-    >
-      
-      {/* Toast Notification HUD */}
-      {notification && (
-        <div 
-          id="toast_notification" 
-          className={`fixed bottom-6 ${direction === 'rtl' ? 'left-6' : 'right-6'} z-50 flex items-center gap-2 px-5 py-3.5 rounded-2xl border text-xs font-bold shadow-lg animate-slideLeft ${
-            notification.type === 'success' 
-              ? 'bg-green-50 border-green-200 text-green-800' 
-              : notification.type === 'info' 
-                ? 'bg-blue-50 border-blue-200 text-blue-800' 
-                : 'bg-red-50 border-red-200 text-red-800'
-          }`}
-        >
-          <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-          <span>{notification.message}</span>
-        </div>
-      )}
-
-      {/* Main App Navigation Bar */}
-      <header className="bg-white border-b border-gray-100 shadow-xs sticky top-0 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          
-          {/* Logo & Slogan */}
-          <div className={`flex items-center gap-3 ${direction === 'rtl' ? 'flex-row-reverse' : 'flex-row'}`}>
-            <div className="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-md">
-              <Sparkles className="w-5 h-5 text-white fill-white" />
-            </div>
-            <div className={direction === 'rtl' ? 'text-right' : 'text-left'}>
-              <h1 className="text-lg font-bold font-sans text-gray-900 tracking-tight">Dimoads AI</h1>
-              <span className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider block">
-                {t('header.tagline')}
-              </span>
-            </div>
+      <div 
+        id="app_root" 
+        dir={direction} 
+        className={`min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 pb-16 antialiased transition-colors duration-200`}
+      >
+        
+        {/* Toast Notification HUD */}
+        {notification && (
+          <div 
+            id="toast_notification" 
+            className={`fixed bottom-6 ${direction === 'rtl' ? 'left-6' : 'right-6'} z-50 flex items-center gap-2 px-5 py-3.5 rounded-2xl border text-xs font-bold shadow-lg animate-slideLeft ${
+              notification.type === 'success' 
+                ? 'bg-green-50 dark:bg-green-950/50 border-green-200 dark:border-green-800 text-green-800 dark:text-green-300' 
+                : notification.type === 'info' 
+                  ? 'bg-blue-50 dark:bg-blue-950/50 border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300' 
+                  : 'bg-red-50 dark:bg-red-950/50 border-red-200 dark:border-red-800 text-red-800 dark:text-red-300'
+            }`}
+          >
+            <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+            <span>{notification.message}</span>
           </div>
+        )}
 
-          {/* Action Buttons Row */}
-          <div className="flex items-center gap-3">
+        {/* Main App Navigation Bar */}
+        <header className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-xs sticky top-0 z-30 transition-colors duration-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-{/* Language Selector: dropdown covering all 20 supported languages */}
-<select
-  id="language_toggle_btn"
-  value={language}
-  onChange={(e) => setLanguage(e.target.value as typeof language)}
-  className="p-2.5 hover:bg-gray-100 text-gray-600 rounded-full transition-colors font-bold text-xs border border-gray-200 cursor-pointer bg-white outline-none"
-  title={t('header.changeLanguage')}
->
-  {availableLanguages.map((lang) => (
-    <option key={lang.code} value={lang.code}>
-      {lang.nativeName}
-    </option>
-  ))}
-</select>
+            {/* Logo & Slogan */}
+            <div className={`flex items-center gap-3 ${direction === 'rtl' ? 'flex-row-reverse' : 'flex-row'}`}>
+              <div className="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-md">
+                <Sparkles className="w-5 h-5 text-white fill-white" />
+              </div>
+              <div className={direction === 'rtl' ? 'text-right' : 'text-left'}>
+                <h1 className="text-lg font-bold font-sans text-gray-900 dark:text-gray-100 tracking-tight">Dimoads AI</h1>
+                <span className="text-[10px] text-gray-400 dark:text-gray-500 font-semibold uppercase tracking-wider block">
+                  {t('header.tagline')}
+                </span>
+              </div>
+            </div>
 
-            <button
-              id="admin_panel_toggle_btn"
-              onClick={() => {
-                if (!authUser) {
-                  setAuthModalView('login');
-                  setAuthModalOpen(true);
-                  triggerToast(t('toast.adminLoginRequired'), 'info');
-                } else if (authUser.accountType !== 'administrator') {
-                  triggerToast(t('toast.adminOnly'), 'error');
-                } else {
-                  setShowAdminPanel(!showAdminPanel);
-                }
-              }}
-              className={`p-2.5 rounded-full transition-all flex items-center gap-1.5 font-bold text-xs cursor-pointer border ${
-                showAdminPanel 
-                  ? 'bg-red-50 border-red-200 text-red-700' 
-                  : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <span>{t('header.admin')}</span>
-            </button>
+            {/* Action Buttons Row */}
+            <div className="flex items-center gap-3">
+              
+              {/* Language Selector: dropdown covering all 20 supported languages */}
+              <select
+                id="language_toggle_btn"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value as typeof language)}
+                className="p-2.5 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full transition-colors font-bold text-xs border border-gray-200 dark:border-gray-700 cursor-pointer bg-white dark:bg-gray-800 outline-none"
+                title={t('header.changeLanguage')}
+              >
+                {availableLanguages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.nativeName}
+                  </option>
+                ))}
+              </select>
 
-            {/* User Profile Badge Trigger */}
-            <button
-              id="user_profile_trigger_btn"
-              onClick={() => {
-                if (!authUser) {
-                  setAuthModalView('login');
-                  setAuthModalOpen(true);
-                } else {
-                  setShowProfileModal(true);
-                }
-              }}
-              className="px-4 py-2 hover:bg-gray-100 border border-gray-200 rounded-full transition-all flex items-center gap-2 cursor-pointer text-xs font-semibold"
-            >
-              <User className="w-4 h-4 text-gray-500" />
-              <span className="hidden sm:inline">{currentUser.name}</span>
-              <span className="px-1.5 py-0.5 bg-blue-100 text-blue-800 text-[10px] font-bold rounded">
-                {currentUser.trustScore}% {t('header.trust')}
-              </span>
-            </button>
+              {/* Dark Mode Toggle */}
+              <button
+                id="theme_toggle_btn"
+                onClick={() => setTheme(isDark ? 'light' : 'dark')}
+                className="p-2.5 rounded-full transition-all flex items-center gap-1.5 font-bold text-xs cursor-pointer border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                title={t('header.toggleTheme')}
+              >
+                {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </button>
 
-            {/* Publish Ad Action Button */}
-            <button
-              id="publish_ad_header_btn"
-              onClick={() => {
-                if (!authUser) {
-                  setAuthModalView('login');
-                  setAuthModalOpen(true);
-                  triggerToast(t('toast.publishLoginRequired'), 'info');
-                } else {
-                  setShowAddModal(true);
-                }
-              }}
-              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-sm flex items-center gap-1.5 text-xs cursor-pointer active:scale-95"
-            >
-              <Plus className="w-4.5 h-4.5" />
-              <span>{t('header.publishAd')}</span>
-            </button>
+              <button
+                id="admin_panel_toggle_btn"
+                onClick={() => {
+                  if (!authUser) {
+                    setAuthModalView('login');
+                    setAuthModalOpen(true);
+                    triggerToast(t('toast.adminLoginRequired'), 'info');
+                  } else {
+                    setShowAdminPanel(!showAdminPanel);
+                  }
+                }}
+                className={`p-2.5 rounded-full transition-all flex items-center gap-1.5 font-bold text-xs cursor-pointer border ${
+                  showAdminPanel 
+                    ? 'bg-red-50 dark:bg-red-950/50 border-red-200 dark:border-red-800 text-red-700 dark:text-red-300' 
+                    : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+              >
+                <span>{t('header.admin')}</span>
+              </button>
+
+              {/* User Profile Badge Trigger */}
+              <button
+                id="user_profile_trigger_btn"
+                onClick={() => {
+                  if (!authUser) {
+                    setAuthModalView('login');
+                    setAuthModalOpen(true);
+                  } else {
+                    setShowProfileModal(true);
+                  }
+                }}
+                className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full transition-all flex items-center gap-2 cursor-pointer text-xs font-semibold bg-white dark:bg-gray-800"
+              >
+                <User className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                <span className="hidden sm:inline text-gray-700 dark:text-gray-200">{currentUser.name}</span>
+                <span className="px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-[10px] font-bold rounded">
+                  {currentUser.trustScore}% {t('header.trust')}
+                </span>
+              </button>
+
+              {/* Publish Ad Action Button */}
+              <button
+                id="publish_ad_header_btn"
+                onClick={() => {
+                  if (!authUser) {
+                    setAuthModalView('login');
+                    setAuthModalOpen(true);
+                    triggerToast(t('toast.publishLoginRequired'), 'info');
+                  } else {
+                    setShowAddModal(true);
+                  }
+                }}
+                className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-sm flex items-center gap-1.5 text-xs cursor-pointer active:scale-95"
+              >
+                <Plus className="w-4.5 h-4.5" />
+                <span>{t('header.publishAd')}</span>
+              </button>
+
+            </div>
 
           </div>
-
-        </div>
-      </header>
+        </header>
 
       {/* Main Marketplace Context */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
